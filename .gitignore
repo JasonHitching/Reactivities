@@ -65,9 +65,12 @@ BenchmarkDotNet.Artifacts/
 project.lock.json
 project.fragment.lock.json
 artifacts/
-
+appsettings.json
 # StyleCop
 StyleCopReport.xml
+
+*.db
+.DS_Store
 
 # Files built by Visual Studio
 *_i.c
