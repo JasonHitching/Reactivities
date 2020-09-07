@@ -9,6 +9,7 @@ Technology | Purpose
 [.NET](https://dotnet.microsoft.com/) | Web Framework Used
 [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) | Serves as an object-relational mapper (O/RM)
 [Postman](https://www.postman.com/use-cases/api-testing-automation/) | Used for API testing
+[Axios](https://github.com/axios/axios | Handling HTTP requests within React
 [Visual Studio Code](https://code.visualstudio.com/) | IDE Used
 
 ## Authors
