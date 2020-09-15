@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
-import { Header, Icon } from "semantic-ui-react";
+import { Header, Icon, List } from "semantic-ui-react";
 
 class App extends Component {
   state = {
@@ -12,7 +12,6 @@ class App extends Component {
   // When component mounts use axios to retrieve data from the project API
   componentDidMount() {
     axios.get("http://localhost:5000/api/values").then((response) => {
-      console.log(response);
       this.setState({
         // values array within state property = API response data
         values: response.data,
@@ -27,11 +26,11 @@ class App extends Component {
           <Icon name="plug" />
           <Header.Content>Reactivities</Header.Content>
         </Header>
-        <ul>
+        <List>
           {this.state.values.map((value: any) => (
-            <li key={value.id}>{value.name}</li>
+            <List.Item key={value.id}>{value.name}</List.Item>
           ))}
-        </ul>
+        </List>
       </div>
     );
   }
