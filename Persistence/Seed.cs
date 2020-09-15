@@ -5,11 +5,13 @@ using System;
 
 namespace Persistence
 {
+    /** Seed class
+    *   Used for seeding Activity data to the SQLite database **/
     public class Seed
     {
         public static void SeedData(DataContext context)
         {
-            if (!context.Activities.Any())
+            if (!context.Activities.Any()) // If data isn't already populated
             {
                 List<Activity> activities = new List<Activity>
                 {
@@ -104,6 +106,8 @@ namespace Persistence
                         Venue = "Cinema",
                     }
                 };
+
+                // Incorporate data
                 context.Activities.AddRange(activities);
                 context.SaveChanges();
             }
