@@ -21,15 +21,16 @@ namespace Application.Activities {
 
                 var activity = await _context.Activities.FindAsync(request.Id);
 
+                //Check if a valid activity was retrieved, delete it if yes
                 if (activity == null) {
-
-                } else {
                     throw new Exception("Could not find activity");
-
+                } else {
+                    _context.Remove(activity);
                 }
 
                 var success = await _context.SaveChangesAsync() > 0;
 
+                // If true
                 if (success) {
                     return Unit.Value;
                 } else {
