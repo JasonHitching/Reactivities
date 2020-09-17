@@ -3,14 +3,11 @@ using System.Linq;
 using Domain;
 using System;
 
-namespace Persistence
-{
+namespace Persistence {
     /** Seed class
     *   Used for seeding Activity data to the SQLite database **/
-    public class Seed
-    {
-        public static void SeedData(DataContext context)
-        {
+    public class Seed {
+        public static void SeedData(DataContext context) {
             if (!context.Activities.Any()) // If data isn't already populated
             {
                 List<Activity> activities = new List<Activity>
