@@ -26,6 +26,7 @@ namespace Application.Activities
 
             }
 
+            // Handler method - used to async process activity listing business logic upon request
             public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var activities = await _context.Activities.ToListAsync();

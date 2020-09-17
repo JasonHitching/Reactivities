@@ -12,6 +12,7 @@ namespace API.Controllers
     public class ActivitiesController : ControllerBase
     {
         private readonly IMediator _mediator;
+
         public ActivitiesController(IMediator mediator)
         {
             _mediator = mediator;
