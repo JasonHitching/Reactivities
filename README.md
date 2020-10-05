@@ -2,7 +2,7 @@
 A social platform application that is being continually added to in conjunction with the Udemy course listed below. My end goal is to learn how to create a full application that incorporates data management and API's using dotnet and displays a UI built with React.js from start to finish. 
 
 # Built Using
-
+| Tech | Usage
 ------------ | -------------
 [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) | Programming Language Used
 [.NET](https://dotnet.microsoft.com/) | Web Framework Used
