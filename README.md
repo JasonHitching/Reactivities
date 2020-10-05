@@ -3,13 +3,13 @@ A social platform application that is being continually added to in conjunction 
 
 # Built Using
 
-Technology | Purpose
 ------------ | -------------
 [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) | Programming Language Used
 [.NET](https://dotnet.microsoft.com/) | Web Framework Used
 [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) | Serves as an object-relational mapper (O/RM)
 [Postman](https://www.postman.com/use-cases/api-testing-automation/) | Used for API testing
 [Axios](https://github.com/axios/axios) | Library for handling HTTP requests with React
+[Semantic UI React](https://react.semantic-ui.com/) | React styling framework
 [Visual Studio Code](https://code.visualstudio.com/) | IDE Used
 
 ## Authors
