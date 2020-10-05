@@ -4,7 +4,7 @@ A social platform application that is being continually added to in conjunction 
 # Built Using
 | Tech | Usage
 ------------ | -------------
-[C#](https://docs.microsoft.com/en-us/dotnet/csharp/) | Programming Language Used
+[C#](https://docs.microsoft.com/en-us/dotnet/csharp/) | .NET Language Used
 [.NET](https://dotnet.microsoft.com/) | Web Framework Used
 [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/) | Serves as an object-relational mapper (O/RM)
 [Postman](https://www.postman.com/use-cases/api-testing-automation/) | Used for API testing
