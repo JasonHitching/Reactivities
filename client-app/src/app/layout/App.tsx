@@ -7,17 +7,21 @@ import { ActivityDashboard } from "../../features/activities/dashboard/ActivityD
 
 const App = () => {
   const [activities, setActivities] = useState<IActivity[]>([]);
-  const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
+  const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(
+    null
+  );
   const [editMode, setEditMode] = useState(false);
 
+  // Method used to set the selected activity by retrieving it from the activities array
   const handleSelectActivity = (id: string) => {
-    setSelectedActivity(activities.filter(a => a.id === id)[0])
-  }
+    setSelectedActivity(activities.filter((a) => a.id === id)[0]);
+  };
 
+  // Method invoked when the 'Create Activity' navbar button is pressed
   const handleOpenCreateForm = () => {
     setSelectedActivity(null);
     setEditMode(true);
-  }
+  };
 
   useEffect(() => {
     //Axios get request to return a list of activities from the API
@@ -39,8 +43,8 @@ const App = () => {
           selectedActivity={selectedActivity}
           editMode={editMode}
           setEditMode={setEditMode}
-          setSelectedActivity={setSelectedActivity}>
-        </ActivityDashboard>
+          setSelectedActivity={setSelectedActivity}
+        ></ActivityDashboard>
       </Container>
     </>
   );

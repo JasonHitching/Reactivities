@@ -1,45 +1,87 @@
-import React, { useState } from 'react'
-import { Button, Form, Segment } from 'semantic-ui-react'
-import { IActivity } from '../../../app/models/activity'
-
+import React, { useState } from "react";
+import { Button, Form, Segment } from "semantic-ui-react";
+import { IActivity } from "../../../app/models/activity";
 
 interface IProps {
-    setEditMode: (editMode: boolean) => void;
-    activity: IActivity;
+  setEditMode: (editMode: boolean) => void;
+  activity: IActivity;
 }
 
-export const ActivityForm: React.FC<IProps> = ({ setEditMode, activity: initialFormState }) => {
-
-    const initializeFrom = () => {
-        if (initialFormState) {
-            return initialFormState;
-        } else {
-            return {
-                id: '',
-                title: '',
-                category: '',
-                description: '',
-                date: '',
-                city: '',
-                venue: ''
-            }
-        }
+export const ActivityForm: React.FC<IProps> = ({
+  setEditMode,
+  activity: initialFormState,
+}) => {
+  const initializeFrom = () => {
+    if (initialFormState) {
+      return initialFormState;
+    } else {
+      return {
+        id: "",
+        title: "",
+        category: "",
+        description: "",
+        date: "",
+        city: "",
+        venue: "",
+      };
     }
+  };
 
-    const [activity, setActivity] = useState<IActivity>(initializeFrom);
+  const handleInputChange = (event: any) => {
+    const { name, value } = event.target;
+    setActivity({ ...activity, [name]: value });
+  };
 
-    return (
-        <Segment clearing>
-            <Form>
-                <Form.Input placeholder="Title" value={activity.title}></Form.Input>
-                <Form.TextArea rows={2} placeholder="Description" value={activity.description}></Form.TextArea>
-                <Form.Input placeholder="Category" value={activity.category}></Form.Input>
-                <Form.Input type="date" placeholder="Date" value={activity.date}></Form.Input>
-                <Form.Input placeholder="City" value={activity.city}></Form.Input>
-                <Form.Input placeholder="Venue" value={activity.venue}></Form.Input>
-                <Button floated='right' positive type='submit' content="Submit" />
-                <Button floated='right' onClick={() => setEditMode(false)} content="Cancel" />
-            </Form>
-        </Segment >
-    )
-}
+  const [activity, setActivity] = useState<IActivity>(initializeFrom);
+
+  return (
+    <Segment clearing>
+      <Form>
+        <Form.Input
+          onChange={handleInputChange}
+          placeholder="Title"
+          value={activity.title}
+          name="title"
+        ></Form.Input>
+        <Form.TextArea
+          onChange={handleInputChange}
+          rows={2}
+          placeholder="Description"
+          value={activity.description}
+          name="description"
+        ></Form.TextArea>
+        <Form.Input
+          onChange={handleInputChange}
+          placeholder="Category"
+          value={activity.category}
+          name="category"
+        ></Form.Input>
+        <Form.Input
+          onChange={handleInputChange}
+          type="date"
+          placeholder="Date"
+          value={activity.date}
+          name="date"
+        ></Form.Input>
+        <Form.Input
+          onChange={handleInputChange}
+          placeholder="City"
+          value={activity.city}
+          name="city"
+        ></Form.Input>
+        <Form.Input
+          onChange={handleInputChange}
+          placeholder="Venue"
+          value={activity.venue}
+          name="venue"
+        ></Form.Input>
+        <Button floated="right" positive type="submit" content="Submit" />
+        <Button
+          floated="right"
+          onClick={() => setEditMode(false)}
+          content="Cancel"
+        />
+      </Form>
+    </Segment>
+  );
+};
