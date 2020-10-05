@@ -23,7 +23,7 @@ export const ActivityDashboard: React.FC<IProps> = ({ activities, selectActivity
       <Grid.Column width={6}>
         {/* Condition to confirm an activity has been selected and edit mode isnt true */}
         {selectedActivity && !editMode && <ActivityDetails activity={selectedActivity} setEditMode={setEditMode} setSelectedActivity={setSelectedActivity} />}
-        {editMode && <ActivityForm setEditMode={setEditMode} />}
+        {editMode && <ActivityForm setEditMode={setEditMode} activity={selectedActivity!} />}
       </Grid.Column>
     </Grid>
   );
