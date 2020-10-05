@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, List } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { IActivity } from "../models/activity";
 import { NavBar } from "../../features/NavBar";
+import { ActivityDashboard } from "../../features/activities/dashboard/ActivityDashboard";
+
 const App = () => {
   const [activities, setActivities] = useState<IActivity[]>([]);
   useEffect(() => {
@@ -18,11 +20,8 @@ const App = () => {
     <>
       <NavBar />
       <Container className="act-list">
-        <List>
-          {activities.map((activity) => (
-            <List.Item key={activity.id}>{activity.title}</List.Item>
-          ))}
-        </List>
+        {/* Create an activity dashboard and pass activities list as a PROP */}
+        <ActivityDashboard activities={activities}></ActivityDashboard>
       </Container>
     </>
   );
