@@ -12,10 +12,11 @@ const App = () => {
 
   const handleSelectActivity = (id: string) => {
     setSelectedActivity(activities.filter(a => a.id === id)[0])
+  }
 
-    if (selectedActivity != null) {
-      console.log(selectedActivity.title);
-    }
+  const handleOpenCreateForm = () => {
+    setSelectedActivity(null);
+    setEditMode(true);
   }
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar openCreateForm={handleOpenCreateForm} />
       <Container className="act-list">
         {/* Create an activity dashboard and pass activities list as a PROP */}
         <ActivityDashboard
@@ -37,7 +38,8 @@ const App = () => {
           selectActivity={handleSelectActivity}
           selectedActivity={selectedActivity}
           editMode={editMode}
-          setEditMode={setEditMode}>
+          setEditMode={setEditMode}
+          setSelectedActivity={setSelectedActivity}>
         </ActivityDashboard>
       </Container>
     </>
