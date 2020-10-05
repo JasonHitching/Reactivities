@@ -7,6 +7,17 @@ import { ActivityDashboard } from "../../features/activities/dashboard/ActivityD
 
 const App = () => {
   const [activities, setActivities] = useState<IActivity[]>([]);
+  const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
+  const [editMode, setEditMode] = useState(false);
+
+  const handleSelectActivity = (id: string) => {
+    setSelectedActivity(activities.filter(a => a.id === id)[0])
+
+    if (selectedActivity != null) {
+      console.log(selectedActivity.title);
+    }
+  }
+
   useEffect(() => {
     //Axios get request to return a list of activities from the API
     axios
@@ -21,7 +32,13 @@ const App = () => {
       <NavBar />
       <Container className="act-list">
         {/* Create an activity dashboard and pass activities list as a PROP */}
-        <ActivityDashboard activities={activities}></ActivityDashboard>
+        <ActivityDashboard
+          activities={activities}
+          selectActivity={handleSelectActivity}
+          selectedActivity={selectedActivity}
+          editMode={editMode}
+          setEditMode={setEditMode}>
+        </ActivityDashboard>
       </Container>
     </>
   );
